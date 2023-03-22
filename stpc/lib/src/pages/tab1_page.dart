@@ -7,7 +7,7 @@ class Tab1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     final newsService = Provider.of<NewsService>(context);
     return const Scaffold(
-      body: Center(child: Text('hola')),
+      body: Center(child: Text('new service')),
     );
   }
 }
