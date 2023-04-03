@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:stpc/src/models/news_app.dart';
 //import 'package:stpc/src/models/news_models.dart';
@@ -11,16 +13,11 @@ class NewsService with ChangeNotifier {
   NewsService() {
     getTopHeadlines();
   }
-<<<<<<< HEAD
-  getTopHeadlines() async {}
-=======
   getTopHeadlines() async {
-    final url = Uri.parse('https://limpio.fly.dev/character/');
+    final url = Uri.parse('https:');
     final resp = await http.get(url);
-
     final newsResponse = newsResponseFromJson(resp.body);
-    //newsResponse.articles[0]
-    //headlines.addAll(newsResponse.movies);
+    headlines.addAll(newsResponse.articles);
+    notifyListeners();
   }
->>>>>>> @{u}
 }
