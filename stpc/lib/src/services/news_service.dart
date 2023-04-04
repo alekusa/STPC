@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stpc/src/models/news_app.dart';
 // de mi app -> ver funcionamiento
 //import 'package:stpc/src/models/news_models.dart';
+//https://limpio.fly.dev/character/
 import 'package:http/http.dart' as http;
 
 const urlApi = 'https://newsapi.org/v2/top-headlines?country=ar';
@@ -14,6 +15,7 @@ class NewsService with ChangeNotifier {
   }
   getTopHeadlines() async {
     final url = Uri.parse('$urlApi&apiKey=$apiKey');
+    //final url = Uri.parse('https://limpio.fly.dev/character/');
     final resp = await http.get(url);
     final newsResponse = newsResponseFromJson(resp.body);
     headlines.addAll(newsResponse.articles);
